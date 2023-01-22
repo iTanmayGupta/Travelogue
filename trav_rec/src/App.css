@@ -1,5 +1,7 @@
 .App {
   text-align: center;
+  width: 100%;
+  height: 100%;
 }
 
 .App-logo {
@@ -47,5 +49,6 @@
 .CardsHolder{
   height: 65vh;
   width: 100;
-  background-image: linear-gradient(to bottom right, purple,  rgb(24, 2, 150), black)
+  background-image: linear-gradient(to bottom right, purple,  rgb(24, 2, 150), black);
+  overflow: scroll;
 }

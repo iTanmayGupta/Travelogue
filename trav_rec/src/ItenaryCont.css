@@ -1,4 +1,23 @@
-.MainCont{
+.ICMainCont{
     height: 100%;
     width: 100%;
+    text-align: center;
+    color: white;
 }
+
+/* .ICCardCont{
+    padding-top: 4%;
+    height: 90%;
+    width: 100%;
+    text-align: center;
+    color: white;
+    overflow: scroll;
+} */
+
+.ICText{
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 30px;
+    padding-top: 1%;
+    /* position: fixed; */
+    /* margin-inline-start: 40%; */
+    }
