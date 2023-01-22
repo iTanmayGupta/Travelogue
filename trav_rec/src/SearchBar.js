@@ -34,6 +34,7 @@ class SearchCont extends React.Component{
             a13: false,
             a14: false,
             a15: false,
+            response: this.props.response
         }
     }
 
@@ -42,10 +43,16 @@ class SearchCont extends React.Component{
         this.setState({popUpToggle: false})
     }
 
-    // handleResponse = () => {
-    //     cardcont = document.getElementById('ICMainCont')
-    //     cardcont.appendChild(<Card></Card>)
-    // }
+    handleResponse = (resp) => {
+        this.setState({response: resp})
+        console.log("in search bar")
+        console.log(resp)
+        this.props.handleCardCreation(resp)
+    }
+
+    handleImg = (img) => {
+        this.props.handleImgCreation(img)
+    }
 
     handleSearch = () => {
         console.log("here")
@@ -113,13 +120,20 @@ class SearchCont extends React.Component{
           "activities" : list
           })
           .then((response) => {
-            console.log(response.data)
+            this.handleResponse(response.data)
+            // this.handleImage()
           })
-          .catch((error) => {
-            console.log("Oh no")
-          })
+        
       }
-
+    
+    handleImage = () => {
+        console.log("here")
+        axios.get("http://127.0.0.1:5000/api/v1/generateImage/prompt=" + this.state.loc)
+        .then((response) => {
+            console.log(response.data[0])
+            this.handleImg(response.data[0]["url"])
+        })
+    }
     
     handlePopUp = () => {
         this.setState({popUpToggle: true})
@@ -274,6 +288,8 @@ class SearchCont extends React.Component{
     // }
 
     render(){
+        // const { response } = this.props;
+
         return(
             <div className="MainCont">
                 <div id="pop" className="Dark">

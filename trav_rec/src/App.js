@@ -3,18 +3,41 @@ import axios from "axios"
 import './App.css';
 import SearchCont from './SearchBar'
 import ItenaryCont from './ItenaryCont'
+import React from 'react'
 
-function App() {
+class App extends React.Component {
+  constructor(props){
+    super(props);
+
+    this.state = {
+      response : "",
+      img: ""
+    }
+  }
+
+  handleCardCreation = (r) => {
+    console.log("in app area")
+    console.log(r)
+    this.setState({response:r})
+  }
+
+  handleImgCreation = (r) => {
+    console.log("in app area")
+    console.log(r)
+    this.setState({img:r})
+  }
+
+  render(){
   return (
     <div className="App">
       <div className="SearchBarHolder">
-        <SearchCont/>
+        <SearchCont response={this.state.response} handleCardCreation={this.handleCardCreation} handleImgCreation={this.handleImgCreation}/>
       </div>
       <div className="CardsHolder">
         <div className="ICText1"> 
         Your Itineraries
         </div>
-        <ItenaryCont></ItenaryCont>
+        <ItenaryCont response = {this.state.response} img = {this.state.img}></ItenaryCont>
       </div>
       {/* <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
@@ -32,6 +55,7 @@ function App() {
       </header> */}
     </div>
   );
+}
 }
 
 export default App;

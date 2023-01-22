@@ -12,6 +12,7 @@
     border: 1px solid rgba( 255, 255, 255, 0.18 );
     position: relative;
     font-family: 'Courier New', Courier, monospace;
+    /* visibility: hidden */
 }
 
 .ImgCont{
@@ -27,6 +28,7 @@
     float: right;
     width: 70%;
     height: 100%;
+    overflow: scroll;
 }
 
 .Img{
