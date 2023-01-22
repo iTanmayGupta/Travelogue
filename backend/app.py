@@ -4,9 +4,11 @@ import cohere
 import requests
 import urllib.request
 import openai
+from flask_cors import CORS
+
 
 app = flask.Flask(__name__)
-app.config["DEBUG"] = True
+CORS(app, supports_credentials=True)
 
 openai.api_key = "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"
 co = cohere.Client('j6LxAsA6YIKALgllTH9x5k0QXs1fOsamHlP185V3')
