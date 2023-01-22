@@ -11,7 +11,7 @@ class ItenaryCont extends React.Component{
 
 render(){
     return(
-        <div className="ICMainCont">
+        <div id="ICMainCont" className="ICMainCont">
             {/* <div className="ICText">
                 Your Itineraries
             </div> */}

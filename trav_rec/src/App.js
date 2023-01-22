@@ -5,7 +5,6 @@ import SearchCont from './SearchBar'
 import ItenaryCont from './ItenaryCont'
 
 function App() {
-  
   return (
     <div className="App">
       <div className="SearchBarHolder">

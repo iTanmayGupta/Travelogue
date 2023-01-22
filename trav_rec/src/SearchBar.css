@@ -42,6 +42,51 @@ float: left;
     background-image: linear-gradient(to bottom right, purple,  rgb(24, 2, 150), black);
   }
 
+  .GoButtonStyle2{
+    background-color: white
+  }
+
   .SurpriseButtonStyle{
     background-image: linear-gradient(to bottom right, purple,  rgb(24, 2, 150), black);
   }
+
+  .Dark{
+    background-color: rgba(102, 97, 97, 0.7);
+    height: 1000%;
+    width: 100%;
+    z-index: 1000;
+    position: absolute;
+    visibility: hidden
+    /* position: fixed; */
+  }
+
+  .Form{
+    height: 70vh;
+    width: 50%;
+    margin-left: 25%;
+    margin-top: 10%;
+    position: absolute;
+    font-family: 'Courier New', Courier, monospace;
+    background-image: linear-gradient(to bottom right, purple,  rgb(24, 2, 150), black);
+    color: white;
+    border-radius: 25px;
+    overflow: scroll;
+  }
+
+  .SmallText{
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 27px;
+    margin-top: 5%
+    }
+
+  .Left{
+    margin-left: 10%;
+    margin-top: 5%;
+    overflow: scroll
+  }
+
+  .SmallerText{
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 20px;
+    padding-top: 5%
+    }
