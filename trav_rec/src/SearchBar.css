@@ -1,0 +1,47 @@
+
+.Text{
+font-family: 'Courier New', Courier, monospace;
+font-size: 40px;
+margin-top: 5%
+}
+/* 
+.MainCont{
+background: rgba( 255, 225, 225, 0.15 );
+box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+backdrop-filter: blur( 1.5px );
+-webkit-backdrop-filter: blur( 1.5px );
+border-radius: 25px;
+border: 1px solid rgba( 255, 255, 255, 0.18 );
+} */
+
+.MainCont{
+height: 90%;
+width: 100%;
+/* margin-top: 8%; */
+height: 30vh;
+position: absolute;
+}
+
+.ButtonCont{
+margin-top: 1.5%;
+position: relative;
+width: 100%;
+}
+
+.GoButton{
+margin-left: 40%;
+float: left;
+}
+
+.SurpriseButton{
+    margin-right: 40%;
+    float: right;
+}
+
+.GoButtonStyle{
+    background-image: linear-gradient(to bottom right, purple,  rgb(24, 2, 150), black);
+  }
+
+  .SurpriseButtonStyle{
+    background-image: linear-gradient(to bottom right, purple,  rgb(24, 2, 150), black);
+  }
