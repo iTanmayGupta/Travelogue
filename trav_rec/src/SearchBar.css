@@ -2,7 +2,7 @@
 .Text{
 font-family: 'Courier New', Courier, monospace;
 font-size: 40px;
-margin-top: 5%
+margin-top: 3%
 }
 /* 
 .MainCont{
@@ -29,7 +29,7 @@ width: 100%;
 }
 
 .GoButton{
-margin-left: 40%;
+margin-left: 47%;
 float: left;
 }
 
@@ -90,3 +90,13 @@ float: left;
     font-size: 20px;
     padding-top: 5%
     }
+  
+    .SmallerTextAbs{
+      font-family: 'Courier New', Courier, monospace;
+      font-size: 30px;
+      /* position: absolute; */
+      /* font-weight: 501; */
+      text-align: center;
+      background-image: linear-gradient(to bottom right, purple,  rgb(24, 2, 150), black);
+      color: white
+      }

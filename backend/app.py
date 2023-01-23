@@ -10,7 +10,7 @@ from flask_cors import CORS
 app = flask.Flask(__name__)
 CORS(app, supports_credentials=True)
 
-openai.api_key = "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"
+openai.api_key = "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"
 co = cohere.Client('j6LxAsA6YIKALgllTH9x5k0QXs1fOsamHlP185V3')
 
 

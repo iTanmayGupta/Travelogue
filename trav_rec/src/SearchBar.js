@@ -121,14 +121,15 @@ class SearchCont extends React.Component{
           })
           .then((response) => {
             this.handleResponse(response.data)
-            // this.handleImage()
+            this.handleImage()
           })
+          this.handleCancel()
         
       }
     
     handleImage = () => {
         console.log("here")
-        axios.get("http://127.0.0.1:5000/api/v1/generateImage/prompt=" + this.state.loc)
+        axios.get("http://127.0.0.1:5000/api/v1/generateImage?prompt=" + '"' + this.state.loc + '"')
         .then((response) => {
             console.log(response.data[0])
             this.handleImg(response.data[0]["url"])
@@ -289,7 +290,6 @@ class SearchCont extends React.Component{
 
     render(){
         // const { response } = this.props;
-
         return(
             <div className="MainCont">
                 <div id="pop" className="Dark">
@@ -297,9 +297,12 @@ class SearchCont extends React.Component{
                         <div className="SmallText">
                             You are just a few steps away from the trip of your dreams
                             <br></br>
-                            <TextField id="standard-1" label="Number of Days" variant="standard" onChange={(e) => {this.setState({loc: e.target.value})}} InputLabelProps={{
+                            <TextField id="standard-1" label="Number of Days" variant="standard" onChange={(e) => {
+                                this.setState({days: e.target.value})
+                            }} InputLabelProps={{
                                 style: { color: '#fff' },
                             }}
+                            In
                             sx={{
                                 width: '60%',
                                 marginTop: '4%',
@@ -327,7 +330,10 @@ class SearchCont extends React.Component{
 
                             <div className="ButtonCont">
                                 <div className="GoButton">
-                                    <Button variant="contained" size='large' className='GoButtonStyle' onClick={() => {this.handleSearch()}}>Generate Itinerary</Button>
+                                    <Button variant="contained" size='large' className='GoButtonStyle' onClick={() => {
+                                        this.handleSearch()
+                                        }
+                                        }>Generate Itinerary</Button>
                                 </div>
                                 <div className="SurpriseButton">
                                     <Button variant="contained" size='large' className='GoButtonStyle' onClick={() => {this.handleCancel()}}>Cancel</Button>
@@ -339,6 +345,9 @@ class SearchCont extends React.Component{
                 {/* {this.state.popUpToggle ? (
                 document.getElementsByClassName('Dark').style.visibility="visible"
             ) : null} */}
+                <div className="SmallerTextAbs">
+                    Travelogue
+                </div>
                 <div className="Text">
                     Ready to plan your next trip? Enter destination below
                 </div>
@@ -347,14 +356,17 @@ class SearchCont extends React.Component{
                     width: '60%',
                     marginTop: '2%',
                 }} 
-                onChange = {(e) => {this.setState({days: e.target.value})}}/>
+                onChange = {(e) => {
+                    this.setState({loc: e.target.value})
+                    this.props.handleLocation(this.state.loc)
+                    }}/>
                 <div className="ButtonCont">
                     <div className="GoButton">
                         <Button variant="contained" size='large' className='GoButtonStyle' onClick={() => {this.handlePopUp()}}>Search</Button>
                     </div>
-                    <div className="SurpriseButton">
+                    {/* <div className="SurpriseButton">
                         <Button variant="contained" size='large' className='SurpriseButtonStyle'>Surprise Me!</Button>
-                    </div>
+                    </div> */}
                 </div>
             </div>
             

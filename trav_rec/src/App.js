@@ -11,7 +11,8 @@ class App extends React.Component {
 
     this.state = {
       response : "",
-      img: ""
+      img: "",
+      loc: ""
     }
   }
 
@@ -27,17 +28,23 @@ class App extends React.Component {
     this.setState({img:r})
   }
 
+  handleLocation = (r) => {
+    console.log("in app area")
+    console.log(r)
+    this.setState({loc:r})
+  }
+
   render(){
   return (
     <div className="App">
       <div className="SearchBarHolder">
-        <SearchCont response={this.state.response} handleCardCreation={this.handleCardCreation} handleImgCreation={this.handleImgCreation}/>
+        <SearchCont response={this.state.response} handleCardCreation={this.handleCardCreation} handleImgCreation={this.handleImgCreation} handleLocation={this.handleLocation}/>
       </div>
       <div className="CardsHolder">
         <div className="ICText1"> 
         Your Itineraries
         </div>
-        <ItenaryCont response = {this.state.response} img = {this.state.img}></ItenaryCont>
+        <ItenaryCont response = {this.state.response} img = {this.state.img} loc = {this.state.loc}></ItenaryCont>
       </div>
       {/* <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
