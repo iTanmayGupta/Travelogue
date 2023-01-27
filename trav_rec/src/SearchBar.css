@@ -4,6 +4,12 @@ font-family: 'Courier New', Courier, monospace;
 font-size: 40px;
 margin-top: 3%
 }
+
+#TypewriterText{
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 40px;
+  margin-top: 3%
+  }
 /* 
 .MainCont{
 background: rgba( 255, 225, 225, 0.15 );

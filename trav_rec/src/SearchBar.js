@@ -7,6 +7,7 @@ import Checkbox from '@mui/material/Checkbox'
 import FormControlLabel from '@mui/material/FormControlLabel'
 import FormGroup from '@mui/material/FormGroup'
 import Card from './Card.js'
+import Typewriter from 'typewriter-effect/dist/core'
 // const express = require("express");
 // const app = express()
 // const bodyParser = require("body-parser")
@@ -236,6 +237,21 @@ class SearchCont extends React.Component{
         ): this.setState({a15: true})
     }
 
+    componentDidMount = () => {
+        var t1 = document.getElementById('t1')
+
+        var typewriter = new Typewriter(t1, {
+            loop: true,
+            delay: 75,
+        });
+
+        typewriter
+            .typeString('<div style="margin-top: 3%"><span style="font-family: \'Courier New\', Courier, monospace; font-size: 40px;" >Ready to plan your next trip? Enter destination below </span></div>')
+            .pauseFor(5000)
+            .deleteChars(0.1)
+            .start()
+    } 
+
     // handleSubmit = () => {
     //     list = []
     //     if(this.state.a1 == true){
@@ -348,8 +364,24 @@ class SearchCont extends React.Component{
                 <div className="SmallerTextAbs">
                     Travelogue
                 </div>
-                <div className="Text">
-                    Ready to plan your next trip? Enter destination below
+                <div id='t1' lassName="Text">
+                    <script src="https://unpkg.com/typewriter-effect@latest/dist/core.js"></script>
+                    {/* <Typewriter
+                    onInit={(typewriter) => {
+                        typewriter.typeString("Ready to plan your next trip? Enter destination below")
+                        .pauseFor(1000)
+                        .deleteAll()
+                        .start();
+                    }}
+                    > */}
+                    {/* <Typewriter
+                    options={{
+                        strings: ["Ready to plan your next trip? Enter destination below"],
+                        autoStart: true,
+                        loop: true
+                    }}
+                    /> */}
+                        {/* Ready to plan your next trip? Enter destination below */}
                 </div>
                 <TextField id="outlined-basic" label="Destination Name" variant="outlined"
                 sx={{
